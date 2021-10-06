@@ -34,6 +34,12 @@ SOFTWARE.
 
 ## Contributors
 
+
+Benny Tran
+Janay Allen
+Truong Duong
+Kristiel Guerrero
+
 Benny Tran - https://github.com/benjaminbtrance
 Janay Allen - https://github.com/janayAl
 Truong Duong - https://github.com/Truong-Duong
