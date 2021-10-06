@@ -2,7 +2,7 @@
 
 ## Contributors
 
-Benny Tran
-Janay Allen
-Truong Duong
-Kristiel Guerrero
+-Benny Tran
+-Janay Allen
+-Truong Duong
+-Kristiel Guerrero
