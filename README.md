@@ -33,13 +33,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Contributors
+
 Benny Tran - https://github.com/benjaminbtrance
-Janay Allen - https://github.com/janayAl 
+Janay Allen - https://github.com/janayAl
 Truong Duong - https://github.com/Truong-Duong
 Kristiel Guerrero - https://github.com/kristielguerrero
 
-## Questions 
-Benny Tran
+## Questions
+
+Benny Tran -benjaminb.tran@gmail.com
 Janay Allen
 Truong Duong - truong.duong1908@gmail.com
 Kristiel Guerrero - kristyguerrero20@gmail.com
