@@ -34,20 +34,14 @@ SOFTWARE.
 
 ## Contributors
 
+* Benny Tran - https://github.com/benjaminbtrance
+* Janay Allen - https://github.com/janayAl 
+* Truong Duong - https://github.com/Truong-Duong
+* Kristiel Guerrero - https://github.com/kristielguerrero
 
-Benny Tran
-Janay Allen
-Truong Duong
-Kristiel Guerrero
+## Questions 
+* Benny Tran - benjaminb.tran@gmail.com
+* Janay Allen - jsallen298705@gmail.com
+* Truong Duong - truong.duong1908@gmail.com
+* Kristiel Guerrero - kristyguerrero20@gmail.com
 
-Benny Tran - https://github.com/benjaminbtrance
-Janay Allen - https://github.com/janayAl
-Truong Duong - https://github.com/Truong-Duong
-Kristiel Guerrero - https://github.com/kristielguerrero
-
-## Questions
-
-Benny Tran -benjaminb.tran@gmail.com
-Janay Allen
-Truong Duong - truong.duong1908@gmail.com
-Kristiel Guerrero - kristyguerrero20@gmail.com
