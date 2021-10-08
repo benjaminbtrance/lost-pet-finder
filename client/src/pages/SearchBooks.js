@@ -90,7 +90,7 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Search Lost Pets in Your Area</h1>
+          <h1>Search Lost Pets</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -100,7 +100,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for type of pet (dog, cat, gerbil, etc.)"
+                  placeholder="Search for pet by area"
                 />
               </Col>
               <Col xs={12} md={4}>
