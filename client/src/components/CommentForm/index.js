@@ -70,7 +70,7 @@ const CommentForm = ({ thoughtId }) => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Comment
+                Add Report
               </button>
             </div>
           </form>
