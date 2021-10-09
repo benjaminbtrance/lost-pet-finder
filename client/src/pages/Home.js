@@ -5,7 +5,7 @@ import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
-import MapComponent from '../components/MapComponent';
+import MapComponent from '../components/Map/MapComponent';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
