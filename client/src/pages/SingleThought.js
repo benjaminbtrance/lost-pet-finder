@@ -44,6 +44,10 @@ const SingleThought = () => {
         >
           {thought.thoughtText}
         </blockquote>
+      </div>
+
+      <div id="wrapper">
+        <div className="m-3 p-4"></div>
         <MapComponent />
       </div>
 
