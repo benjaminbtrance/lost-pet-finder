@@ -12,10 +12,10 @@ const resolvers = {
     },
     reports: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Report.find(params).sort({ createdAt: -1 });
     },
     report: async (parent, { reportId }) => {
-      return Thought.findOne({ _id: reportId });
+      return Report.findOne({ _id: reportId });
     },
     me: async (parent, args, context) => {
       if (context.user) {

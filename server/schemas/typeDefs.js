@@ -43,6 +43,7 @@ const typeDefs = gql`
     addReport(reportText: String!): Report
     addComment(reportId: ID!, commentText: String!): Report
     removeThought(thoughtId: ID!): Report
+    removeReport(reportId: ID!): Report
     removeComment(thoughtId: ID!, commentId: ID!): Report
   }
 `;
