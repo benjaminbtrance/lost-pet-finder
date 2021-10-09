@@ -10,11 +10,11 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('reports');
     },
-    thoughts: async (parent, { username }) => {
+    reports: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Thought.find(params).sort({ createdAt: -1 });
     },
-    thought: async (parent, { reportId }) => {
+    report: async (parent, { reportId }) => {
       return Thought.findOne({ _id: reportId });
     },
     me: async (parent, args, context) => {
@@ -48,9 +48,9 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { reportText }, context) => {
+    addReport: async (parent, { reportText }, context) => {
       if (context.user) {
-        const thought = await Report.create({
+        const report = await Report.create({
           reportText,
           reportAuthor: context.user.username,
         });
@@ -81,7 +81,7 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeThought: async (parent, { reportId }, context) => {
+    removeReport: async (parent, { reportId }, context) => {
       if (context.user) {
         const report = await Report.findOneAndDelete({
           _id: reportId,
