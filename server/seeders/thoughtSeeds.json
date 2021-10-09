@@ -1,42 +1,42 @@
 [
   {
     "reportText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-    "reportAuthor": "Brian Kernighan"
+    "reportAuthor": "Ariel Sanders"
   },
   {
     "reportText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-    "reportAuthor": "Max Kanat-Alexander"
+    "reportAuthor": "Matt Skiller"
   },
   {
     "reportText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-    "reportAuthor": "Why The Lucky Stiff"
+    "reportAuthor": "Sarah Miller"
   },
   {
     "reportText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "reportAuthor": "Kent Beck"
+    "reportAuthor": "Tracy Darth"
   },
   {
-    "reportText": "Walking on water and developing software from a specification are easy if both are frozen.",
-    "reportAuthor": "Edward V. Berard"
+    "reportText": "Dog found walking across the street.",
+    "reportAuthor": "Michael Smith"
   },
   {
-    "reportText": "The most disastrous thing that you can ever learn is your first programming language.",
-    "reportAuthor": "Alan Kay"
+    "reportText": "White cat with a caller spotted laying under a tree.",
+    "reportAuthor": "Alicia M."
   },
   {
-    "reportText": "The most important property of a program is whether it accomplishes the intention of its user.",
-    "reportAuthor": "C.A.R. Hoare"
+    "reportText": "I saw a dog who looked lost in the parkign lot. It was medium sized and appeared to be mixed with a poodle.",
+    "reportAuthor": "David Rules"
   },
   {
-    "reportText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-    "reportAuthor": "David Thomas"
+    "reportText": "There was a large dalmation seen running around the school yard. It had a red collar.",
+    "reportAuthor": "Venny B."
   },
   {
-    "reportText": "If you optimize everything, you will always be unhappy.",
-    "thoughtAuthor": "Donald Knuth"
+    "reportText": "I found a black cat with blue collar hiding behind a large trash bin.",
+    "thoughtAuthor": "Mary M."
   },
   {
-    "reportText": "It's not a bug; it's an undocumented feature.",
-    "reportAuthor": "Lernantino"
+    "reportText": "I saw a turtle on the sidewalk. This is unusual so I figured it might belong to someone .",
+    "reportAuthor": "Angelina"
   }
 ]
