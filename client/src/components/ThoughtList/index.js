@@ -43,7 +43,7 @@ const ThoughtList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/thoughts/${thought._id}`}
             >
-              View location of this pet on the map.
+              View report of this pet.
             </Link>
           </div>
         ))}
