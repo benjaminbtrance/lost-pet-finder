@@ -18,7 +18,7 @@ const CommentForm = ({ reportId }) => {
     try {
       const { data } = await addComment({
         variables: {
-          thoughtId,
+          reportId,
           commentText,
           commentAuthor: Auth.getProfile().data.username,
         },
