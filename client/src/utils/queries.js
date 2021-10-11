@@ -6,32 +6,32 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      reports {
         _id
-        thoughtText
+        reportText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_REPORTS = gql`
+  query getReports {
+    reports {
       _id
-      thoughtText
-      thoughtAuthor
+      reportText
+      reportAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_REPORT = gql`
+  query getSingleReport($reportId: ID!) {
+    report(reportId: $reportId) {
       _id
-      thoughtText
-      thoughtAuthor
+      reportText
+      reportAuthor
       createdAt
       comments {
         _id
@@ -49,10 +49,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      reports {
         _id
-        thoughtText
-        thoughtAuthor
+        reportText
+        reportAuthor
         createdAt
       }
     }
