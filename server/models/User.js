@@ -25,6 +25,12 @@ const userSchema = new Schema({
       ref: 'Report',
     },
   ],
+  lostPetProfile: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'LostPetProfile',
+    },
+  ],
 });
 
 userSchema.pre('save', async function (next) {

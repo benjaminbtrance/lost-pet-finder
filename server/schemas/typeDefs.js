@@ -9,6 +9,13 @@ const typeDefs = gql`
     reports: [Report]!
   }
 
+  type LostPetProfile {
+    _id: ID
+    lostPetAuthor: String
+    lostPetName: String
+    createdAt: String
+  }
+
   type Report {
     _id: ID
     reportText: String
@@ -32,7 +39,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    reports(username: String): [Report]
+    thoughts(username: String): [Report]
     report(reportId: ID!): Report
     me: User
   }
@@ -40,11 +47,11 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addLostPetProfile(lostPetName: String): LostPetProfile
     addReport(reportText: String!): Report
     addComment(reportId: ID!, commentText: String!): Report
-    removeThought(thoughtId: ID!): Report
     removeReport(reportId: ID!): Report
-    removeComment(thoughtId: ID!, commentId: ID!): Report
+    removeComment(reportId: ID!, commentId: ID!): Report
   }
 `;
 

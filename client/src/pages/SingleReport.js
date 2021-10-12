@@ -8,6 +8,7 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
 import { QUERY_SINGLE_REPORT } from '../utils/queries';
+import MapComponent from '../components/Map/MapComponent';
 
 const SingleReport = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -43,6 +44,11 @@ const SingleReport = () => {
         >
           {report.reportText}
         </blockquote>
+      </div>
+
+      <div id="wrapper">
+        <div className="m-3 p-4"></div>
+        <MapComponent />
       </div>
 
       <div className="my-5">

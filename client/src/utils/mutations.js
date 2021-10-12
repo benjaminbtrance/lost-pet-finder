@@ -39,6 +39,17 @@ export const ADD_REPORT = gql`
   }
 `;
 
+export const ADD_LOST_PET_PROFILE = gql`
+  mutation addLostPetProfile($lostPetName: String) {
+    addLostPetProfile(lostPetName: $lostPetName) {
+      _id
+      lostPetAuthor
+      lostPetName
+      createdAt
+    }
+  }
+`;
+
 export const ADD_COMMENT = gql`
   mutation addComment($reportId: ID!, $commentText: String!) {
     addComment(reportId: $reportId, commentText: $commentText) {

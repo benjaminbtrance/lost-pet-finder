@@ -43,7 +43,7 @@ const ReportList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/reports/${report._id}`}
             >
-              Join the discussion on this report.
+              View report of this pet.
             </Link>
           </div>
         ))}
