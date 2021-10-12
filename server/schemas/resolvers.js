@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Report } = require('../models');
+const { User, Report, LostPetProfile } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -47,6 +47,22 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addLostPetProfile: async (parent, { lostPetName }, context) => {
+      if (context.user) {
+        const lostPetProfile = await LostPetProfile.create({
+          lostPetName,
+          lostPetAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { lostPetProfile: lostPetProfile._id } }
+        );
+
+        return lostPetProfile;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     addReport: async (parent, { reportText }, context) => {
       if (context.user) {
@@ -99,7 +115,7 @@ const resolvers = {
     },
     removeComment: async (parent, { reportId, commentId }, context) => {
       if (context.user) {
-        return Report.findOneAndUpdate(
+        return report.findOneAndUpdate(
           { _id: reportId },
           {
             $pull: {

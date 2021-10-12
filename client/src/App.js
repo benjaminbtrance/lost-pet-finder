@@ -15,6 +15,7 @@ import SingleReport from './pages/SingleReport';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CreateProfile from './pages/CreateProfile';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
