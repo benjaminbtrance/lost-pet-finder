@@ -9,6 +9,7 @@ import Auth from '../../utils/auth';
 
 const LostPetProfileForm = () => {
 	const [lostPetName, setlostPetName] = useState('');
+	const [lostPetType, setlostPetType] = useState('');
 
 	const [addLostPetProfile, { error }] = useMutation(ADD_LOST_PET_PROFILE);
 
@@ -28,6 +29,9 @@ const LostPetProfileForm = () => {
 			const { data } = await addLostPetProfile({
 				variables: {
 					lostPetName,
+					lostPetType,
+					// lostPetCity,
+					// lostPetColor,
 				},
 			});
 
@@ -51,13 +55,18 @@ const LostPetProfileForm = () => {
 
 	return (
 		<form onSubmit={handleFormSubmit}>
-			<input
-				name="lostPetName"
-				placeholder="Here's a new thought..."
-				value={lostPetName}
-				onChange={handleChange}
-			/>
-			<button type="submit">Create Profile</button>
+			<div className="form-group">
+				<label for="lostPetName">Pet Name:</label>
+				<input
+					id="lostPetName"
+					name="lostPetName"
+					placeholder="What is your pet's name?"
+					value={lostPetName}
+					className="form-control"
+					onChange={handleChange}
+				/>
+				<button type="submit">Create Profile</button>
+			</div>
 		</form>
 	);
 	// <div>
