@@ -40,7 +40,7 @@ class MapView extends PureComponent {
       <Container fluid={true}>
         <Row>
           <Col>
-            <h2>Search</h2>
+            <h2>Pet Search Based on Location</h2>
           </Col>
         </Row>
         <Row className="py-4">
