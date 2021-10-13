@@ -11,6 +11,18 @@ const lostPetProfile = new Schema({
 		type: String,
 		trim: true,
 	},
+	lostPetType: {
+		type: String,
+		trim: true,
+	},
+	lostPetCity: {
+		type: String,
+		trim: true,
+	},
+	lostPetColor: {
+		type: String,
+		trim: true,
+	},
 	createdAt: {
 		type: Date,
 		default: Date.now,
