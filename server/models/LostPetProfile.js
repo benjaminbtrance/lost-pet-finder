@@ -23,6 +23,14 @@ const lostPetProfile = new Schema({
 		type: String,
 		trim: true,
 	},
+	lostPetAuthorPhoneNum: {
+		type: String,
+		trim: true,
+	},
+	lostPetAuthorEmail: {
+		type: String,
+		trim: true,
+	},
 	createdAt: {
 		type: Date,
 		default: Date.now,

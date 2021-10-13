@@ -45,12 +45,16 @@ export const ADD_LOST_PET_PROFILE = gql`
 		$lostPetType: String
 		$lostPetCity: String
 		$lostPetColor: String
+		$lostPetAuthorPhoneNum: String
+		$lostPetAuthorEmail: String
 	) {
 		addLostPetProfile(
 			lostPetName: $lostPetName
 			lostPetType: $lostPetType
 			lostPetCity: $lostPetCity
 			lostPetColor: $lostPetColor
+			lostPetAuthorPhoneNum: $lostPetAuthorPhoneNum
+			lostPetAuthorEmail: $lostPetAuthorEmail
 		) {
 			_id
 			lostPetAuthor
@@ -58,6 +62,8 @@ export const ADD_LOST_PET_PROFILE = gql`
 			lostPetType
 			lostPetCity
 			lostPetColor
+			lostPetAuthorPhoneNum
+			lostPetAuthorEmail
 			createdAt
 		}
 	}
