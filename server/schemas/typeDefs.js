@@ -16,6 +16,8 @@ const typeDefs = gql`
 		lostPetType: String
 		lostPetCity: String
 		lostPetColor: String
+		lostPetAuthorPhoneNum: String
+		lostPetAuthorEmail: String
 		createdAt: String
 	}
 
@@ -50,7 +52,14 @@ const typeDefs = gql`
 	type Mutation {
 		addUser(username: String!, email: String!, password: String!): Auth
 		login(email: String!, password: String!): Auth
-		addLostPetProfile(lostPetName: String): LostPetProfile
+		addLostPetProfile(
+			lostPetName: String
+			lostPetType: String
+			lostPetCity: String
+			lostPetColor: String
+			lostPetAuthorPhoneNum: String
+			lostPetAuthorEmail: String
+		): LostPetProfile
 		addReport(reportText: String!): Report
 		addComment(reportId: ID!, commentText: String!): Report
 		removeReport(reportId: ID!): Report

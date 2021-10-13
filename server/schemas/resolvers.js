@@ -50,7 +50,14 @@ const resolvers = {
 		},
 		addLostPetProfile: async (
 			parent,
-			{ lostPetName, lostPetType, lostPetCity, lostPetColor },
+			{
+				lostPetName,
+				lostPetType,
+				lostPetCity,
+				lostPetColor,
+				lostPetAuthorPhoneNum,
+				lostPetAuthorEmail,
+			},
 			context
 		) => {
 			if (context.user) {
@@ -59,6 +66,8 @@ const resolvers = {
 					lostPetType,
 					lostPetCity,
 					lostPetColor,
+					lostPetAuthorPhoneNum,
+					lostPetAuthorEmail,
 					lostPetAuthor: context.user.username,
 				});
 

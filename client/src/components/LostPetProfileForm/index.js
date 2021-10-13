@@ -10,6 +10,10 @@ import Auth from '../../utils/auth';
 const LostPetProfileForm = () => {
 	const [lostPetName, setlostPetName] = useState('');
 	const [lostPetType, setlostPetType] = useState('');
+	const [lostPetCity, setlostPetCity] = useState('');
+	const [lostPetColor, setlostPetColor] = useState('');
+	const [lostPetAuthorPhoneNum, setlostPetAuthorPhoneNum] = useState('');
+	const [lostPetAuthorEmail, setlostPetAuthorEmail] = useState('');
 
 	const [addLostPetProfile, { error }] = useMutation(ADD_LOST_PET_PROFILE);
 
@@ -30,12 +34,19 @@ const LostPetProfileForm = () => {
 				variables: {
 					lostPetName,
 					lostPetType,
-					// lostPetCity,
-					// lostPetColor,
+					lostPetCity,
+					lostPetColor,
+					lostPetAuthorPhoneNum,
+					lostPetAuthorEmail,
 				},
 			});
 
 			setlostPetName('');
+			setlostPetType('');
+			setlostPetCity('');
+			setlostPetColor('');
+			setlostPetAuthorPhoneNum('');
+			setlostPetAuthorEmail('');
 			console.log(data);
 		} catch (err) {
 			console.error(err);
@@ -49,8 +60,26 @@ const LostPetProfileForm = () => {
 		// 	setThoughtText(value);
 		// 	setCharacterCount(value.length);
 		// }
-		const { value } = event.target;
-		setlostPetName(value);
+		const { name, value } = event.target;
+
+		if (name === 'lostPetName') {
+			setlostPetName(value);
+		}
+		if (name === 'lostPetType') {
+			setlostPetType(value);
+		}
+		if (name === 'lostPetCity') {
+			setlostPetCity(value);
+		}
+		if (name === 'lostPetColor') {
+			setlostPetColor(value);
+		}
+		if (name === 'lostPetAuthorPhoneNum') {
+			setlostPetAuthorPhoneNum(value);
+		}
+		if (name === 'lostPetAuthorEmail') {
+			setlostPetAuthorEmail(value);
+		}
 	};
 
 	return (
@@ -65,8 +94,65 @@ const LostPetProfileForm = () => {
 					className="form-control"
 					onChange={handleChange}
 				/>
-				<button type="submit">Create Profile</button>
 			</div>
+			<div className="form-group">
+				<label for="lostPetType">Pet Type:</label>
+				<input
+					id="lostPetType"
+					name="lostPetType"
+					placeholder="Dog? Cat? ...?"
+					value={lostPetType}
+					className="form-control"
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="form-group">
+				<label for="lostPetCity">Pet City:</label>
+				<input
+					id="lostPetCity"
+					name="lostPetCity"
+					placeholder="Where is your pet located?"
+					value={lostPetCity}
+					className="form-control"
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="form-group">
+				<label for="lostPetColor">Pet Color:</label>
+				<input
+					id="lostPetColor"
+					name="lostPetColor"
+					placeholder="What color is your pet?"
+					value={lostPetColor}
+					className="form-control"
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="form-group">
+				<label for="lostPetAuthorPhoneNum">Pet Owner's Phone Number:</label>
+				<input
+					id="lostPetAuthorPhoneNum"
+					name="lostPetAuthorPhoneNum"
+					placeholder="Enter phone number you want to be contacted."
+					value={lostPetAuthorPhoneNum}
+					className="form-control"
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="form-group">
+				<label for="lostPetAuthorEmail">Pet Owner's E-Mail:</label>
+				<input
+					id="lostPetAuthorEmail"
+					name="lostPetAuthorEmail"
+					placeholder="Enter the e-mail you want to be contacted?"
+					value={lostPetAuthorEmail}
+					className="form-control"
+					onChange={handleChange}
+				/>
+			</div>
+			<button type="submit" className="btn btn-primary">
+				Create Profile
+			</button>
 		</form>
 	);
 	// <div>
