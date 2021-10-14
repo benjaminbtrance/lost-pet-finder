@@ -17,6 +17,13 @@ const resolvers = {
 		report: async (parent, { reportId }) => {
 			return Report.findOne({ _id: reportId });
 		},
+		profiles: async (parent, { username }) => {
+			const params = username ? { username } : {};
+			return LostPetProfile.find(params).sort({ createdAt: -1 });
+		},
+		profile: async (parent, { profileId }) => {
+			return Report.findOne({ _id: profileId });
+		},
 		me: async (parent, args, context) => {
 			if (context.user) {
 				return User.findOne({ _id: context.user._id }).populate('reports');
