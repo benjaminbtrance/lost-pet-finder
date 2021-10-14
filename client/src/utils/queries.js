@@ -32,6 +32,9 @@ export const QUERY_LOST_PET_PROFILES = gql`
 			_id
 			lostPetAuthor
 			lostPetName
+			lostPetType
+			lostPetCity
+			lostPetColor
 			createdAt
 		}
 	}

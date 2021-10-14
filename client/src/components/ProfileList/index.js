@@ -19,7 +19,7 @@ const ProfileList = ({ profiles, showUsername = true }) => {
 								>
 									{profile.lostPetAuthor} <br />
 									<span style={{ fontSize: '1rem' }}>
-										had this profile on {profile.createdAt}
+										created this profile on {profile.createdAt}
 									</span>
 								</Link>
 							) : (
@@ -30,6 +30,12 @@ const ProfileList = ({ profiles, showUsername = true }) => {
 								</>
 							)}
 						</h4>
+						<div className="card-body bg-light p-2">
+							<p>Pet Name: {profile.lostPetName}</p>
+							<p>Pet Type: {profile.lostPetType}</p>
+							<p>Pet Color: {profile.lostPetColor}</p>
+							<p>City: {profile.lostPetCity}</p>
+						</div>
 					</div>
 				))}
 		</div>

@@ -47,6 +47,7 @@ const typeDefs = gql`
 		reports(username: String): [Report]
 		report(reportId: ID!): Report
 		profiles(username: String): [LostPetProfile]
+		profile(profileId: ID!): LostPetProfile
 		me: User
 	}
 
