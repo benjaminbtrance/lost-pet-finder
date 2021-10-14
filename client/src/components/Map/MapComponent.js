@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
 import { Room } from "@material-ui/icons";
+import axios from "axios";
 import "./MapComponent.css"
 
 const mapStyle = {
@@ -27,6 +28,7 @@ const fullscreenControlStyle= {
   right: 10,
   top: 10
 };
+
 
 class MapView extends PureComponent {
   constructor(props) {
