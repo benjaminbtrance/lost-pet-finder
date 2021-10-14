@@ -1,8 +1,9 @@
 import React, { useState, PureComponent } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker, NavigationControl  } from 'react-map-gl';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
+import { Room } from "@material-ui/icons";
 
 const mapStyle = {
   width: '100%',
@@ -16,14 +17,20 @@ const params = {
   country: 'us',
 };
 
+const navControlStyle= {
+  right: 10,
+  top: 10
+};
+
+
 class MapView extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       viewport: {
-        latitude: 45.50884,
-        longitude: -73.58781,
-        zoom: 15,
+        latitude: 32.7762719,
+        longitude: -96.7968559,
+        zoom: 10,
       },
     };
   }
@@ -67,7 +74,21 @@ class MapView extends PureComponent {
               {...viewport}
               {...mapStyle}
               onViewportChange={(viewport) => this.setState({ viewport })}
-            ></ReactMapGL>
+            >
+              // add Navigation control 
+              <NavigationControl style={navControlStyle} />
+
+              // add Marker
+              <Marker
+                latitude={32.8418011}
+                longitude={-96.7815281}
+                offsetLeft={-20}
+                offsetTop={10}
+              >
+                <Room style={{fontSize:viewport.zoom * 4}}/>
+              </Marker>
+
+            </ReactMapGL>
           </Col>
         </Row>
       </Container>
