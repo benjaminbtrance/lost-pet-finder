@@ -46,6 +46,7 @@ const typeDefs = gql`
 		user(username: String!): User
 		reports(username: String): [Report]
 		report(reportId: ID!): Report
+		profiles(username: String): [LostPetProfile]
 		me: User
 	}
 
