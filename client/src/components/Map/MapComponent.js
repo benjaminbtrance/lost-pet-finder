@@ -1,9 +1,10 @@
 import React, { useState, PureComponent } from 'react';
-import ReactMapGL, { Marker, NavigationControl, Popup  } from 'react-map-gl';
+import ReactMapGL, { Marker, NavigationControl, Popup, FullscreenControl  } from 'react-map-gl';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
 import { Room } from "@material-ui/icons";
+import "./MapComponent.css"
 
 const mapStyle = {
   width: '100%',
@@ -18,6 +19,11 @@ const params = {
 };
 
 const navControlStyle= {
+  right: 10,
+  bottom: 25
+};
+
+const fullscreenControlStyle= {
   right: 10,
   top: 10
 };
@@ -76,10 +82,13 @@ class MapView extends PureComponent {
             >
               <NavigationControl style={navControlStyle} />
 
+              <FullscreenControl style={fullscreenControlStyle} />
+              z`
               <Marker
                 latitude={32.8418011}
                 longitude={-96.7815281}
-                positionOptions={{enableHighAccuracy: true}}
+                offsetLeft={-20} 
+                offsetTop={-10}
               >
                 <Room style={{fontSize:viewport.zoom * 4, color:"blue"}}/>
               </Marker>
@@ -89,12 +98,17 @@ class MapView extends PureComponent {
               longitude={-96.7815281}
               closeButton={true}
               closeOnClick={false}
-              anchor="left" >
-              <div className="card">
+              anchor="left"
+              offsetLeft={10} 
+              offsetTop={-5}
+              >
+              <div className="petInfo">
                 <label>Name: </label>
-                <label>Bred: </label>
-                <label>Image: </label>
+                <h5>Snowball</h5>
+                <label>Breed: </label>
+                <h6>chihuahua</h6>
                 <label>Description: </label>
+                <p>This is a black small dog with a red butt.</p>
               </div>
               </Popup>
 
