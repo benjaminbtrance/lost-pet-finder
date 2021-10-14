@@ -29,7 +29,6 @@ const fullscreenControlStyle= {
   top: 10
 };
 
-
 class MapView extends PureComponent {
   constructor(props) {
     super(props);
