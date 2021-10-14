@@ -1,5 +1,5 @@
 import React, { useState, PureComponent } from 'react';
-import ReactMapGL, { Marker, NavigationControl  } from 'react-map-gl';
+import ReactMapGL, { Marker, NavigationControl, Popup  } from 'react-map-gl';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
@@ -21,7 +21,6 @@ const navControlStyle= {
   right: 10,
   top: 10
 };
-
 
 class MapView extends PureComponent {
   constructor(props) {
@@ -75,18 +74,29 @@ class MapView extends PureComponent {
               {...mapStyle}
               onViewportChange={(viewport) => this.setState({ viewport })}
             >
-              // add Navigation control 
               <NavigationControl style={navControlStyle} />
 
-              // add Marker
               <Marker
                 latitude={32.8418011}
                 longitude={-96.7815281}
-                offsetLeft={-20}
-                offsetTop={10}
+                positionOptions={{enableHighAccuracy: true}}
               >
-                <Room style={{fontSize:viewport.zoom * 4}}/>
+                <Room style={{fontSize:viewport.zoom * 4, color:"blue"}}/>
               </Marker>
+
+              <Popup
+              latitude={32.8418011}
+              longitude={-96.7815281}
+              closeButton={true}
+              closeOnClick={false}
+              anchor="left" >
+              <div className="card">
+                <label>Name: </label>
+                <label>Bred: </label>
+                <label>Image: </label>
+                <label>Description: </label>
+              </div>
+              </Popup>
 
             </ReactMapGL>
           </Col>
