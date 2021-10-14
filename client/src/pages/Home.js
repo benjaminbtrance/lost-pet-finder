@@ -12,7 +12,7 @@ const Home = () => {
 	const { loading, data } = useQuery(QUERY_LOST_PET_PROFILES);
 	// const reports = data?.reports || [];
 	const profiles = data?.profiles || [];
-	console.log(profiles);
+	// console.log(data);
 
 	return (
 		<main>
