@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_LOST_PET_PROFILE } from '../../utils/mutations';
-import { QUERY_ME, QUERY_PROFILES } from '../../utils/queries';
+import { QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -15,20 +15,16 @@ const LostPetProfileForm = () => {
 	const [lostPetAuthorPhoneNum, setlostPetAuthorPhoneNum] = useState('');
 	const [lostPetAuthorEmail, setlostPetAuthorEmail] = useState('');
 
-	const [addLostPetProfile, { error }] = useMutation(ADD_LOST_PET_PROFILE, {
-		update(cache, { data: { addLostPetProfile } }) {
-			try {
-				const { profiles } = cache.readQuery({ query: QUERY_PROFILES });
+	const [addLostPetProfile, { error }] = useMutation(ADD_LOST_PET_PROFILE);
 
-				cache.writeQuery({
-					query: QUERY_PROFILES,
-					data: { profiles: [addLostPetProfile, ...profiles] },
-				});
-			} catch (e) {
-				console.error(e);
-			}
-		},
-	});
+	// 		// update me object's cache
+	// 		const { me } = cache.readQuery({ query: QUERY_ME });
+	// 		cache.writeQuery({
+	// 			query: QUERY_ME,
+	// 			data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+	// 		});
+	// 	},
+	// });
 
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
@@ -58,6 +54,12 @@ const LostPetProfileForm = () => {
 	};
 
 	const handleChange = (event) => {
+		// const { name, value } = event.target;
+
+		// if (name === 'thoughtText' && value.length <= 280) {
+		// 	setThoughtText(value);
+		// 	setCharacterCount(value.length);
+		// }
 		const { name, value } = event.target;
 
 		if (name === 'lostPetName') {
