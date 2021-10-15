@@ -1,19 +1,21 @@
-import React, { useState, PureComponent } from 'react';
-import ReactMapGL, { Marker, NavigationControl, Popup, FullscreenControl  } from 'react-map-gl';
+import React, { useState, useEffect, PureComponent } from 'react';
+import ReactMapGL, { Marker, NavigationControl, Popup, FullscreenControl, GeolocateControl } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
 import { Room } from "@material-ui/icons";
-import axios from "axios";
 import "./MapComponent.css"
+import petData from "./mapData/pet.json"
 
+mapboxgl.workerClass =
+	// eslint-disable-next-line import/no-webpack-loader-syntax
+	require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+  
 const mapStyle = {
   width: '100%',
   height: 600,
 };
-
-const mapboxApiKey =
-  'pk.eyJ1Ijoia3Jpc3R5Z3VlcnJlcm8yMCIsImEiOiJja3Vob2U1MnYyZmxvMndvOHIzMzNzMnZiIn0.WY_nDAowRmL88PNZs7iJRw';
 
 const params = {
   country: 'us',
@@ -29,10 +31,16 @@ const fullscreenControlStyle= {
   top: 10
 };
 
+const geolocateControlStyle= {
+  left: 10,
+  top: 10
+};
+
 class MapView extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      selectedPet: null,
       viewport: {
         latitude: 32.7762719,
         longitude: -96.7968559,
@@ -47,8 +55,24 @@ class MapView extends PureComponent {
     });
   };
 
+  componentDidMount() {
+    const listener = e => {
+      if (e.key === "Escape") {
+        this.setState({
+          selectedPet: null
+        });
+      }
+    };
+    window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  };
+
   render() {
-    const { viewport } = this.state;
+    const { viewport, selectedPet } = this.state;
+    console.log(selectedPet);
     return (
       <Container fluid={true}>
         <Row>
@@ -84,35 +108,47 @@ class MapView extends PureComponent {
               <NavigationControl style={navControlStyle} />
 
               <FullscreenControl style={fullscreenControlStyle} />
-              z`
-              <Marker
-                latitude={32.8418011}
-                longitude={-96.7815281}
-                offsetLeft={-20} 
-                offsetTop={-10}
+
+              {petData.features.map( pet => (
+                <Marker
+                key={pet.properties.PET_ID}
+                onClick={()=>{
+                  this.setState({
+                    selectedPet: pet
+                  })
+                }}
+                latitude={pet.geometry.coordinates[1]}
+                longitude={pet.geometry.coordinates[0]}
               >
                 <Room style={{fontSize:viewport.zoom * 4, color:"blue"}}/>
               </Marker>
-
-              <Popup
-              latitude={32.8418011}
-              longitude={-96.7815281}
-              closeButton={true}
-              closeOnClick={false}
-              anchor="left"
-              offsetLeft={10} 
-              offsetTop={-5}
-              >
-              <div className="petInfo">
-                <label>Name: </label>
-                <h5>Snowball</h5>
-                <label>Breed: </label>
-                <h6>chihuahua</h6>
-                <label>Description: </label>
-                <p>This is a black small dog with a red butt.</p>
-              </div>
-              </Popup>
-
+              ))}
+              
+              {selectedPet ? (
+                <Popup
+                latitude={selectedPet.geometry.coordinates[1]}
+                longitude={selectedPet.geometry.coordinates[0]}
+                onClose={() => {
+                  this.setState({
+                    selectedPet: null
+                  })
+                }}
+                >
+                
+                <div className="petInfo">
+                  <label>Pet Name: </label>
+                  <h6>{selectedPet.properties.NAME}</h6>
+                  <label>Pet Type: </label>
+                  <h6>{selectedPet.properties.TYPE}</h6>
+                  <label>Pet Color: </label>
+                  <h6>{selectedPet.properties.COLOR}</h6>
+                  <label>Pet Location: </label>
+                  <h6>{selectedPet.properties.Location}</h6>
+                </div>
+                </Popup>
+                
+              ) : null}
+              
             </ReactMapGL>
           </Col>
         </Row>
@@ -122,6 +158,14 @@ class MapView extends PureComponent {
 }
 
 export default MapView;
+
+
+
+
+
+
+
+
 
 // Commented stuff is previous map but will leave in here just in case :)
 
