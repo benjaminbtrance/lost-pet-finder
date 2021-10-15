@@ -1,34 +1,42 @@
-import React, { useState, useEffect, PureComponent } from 'react';
-import ReactMapGL, { Marker, NavigationControl, Popup, FullscreenControl, GeolocateControl } from 'react-map-gl';
+import React, { useState, PureComponent } from 'react';
+import ReactMapGL, {
+	Marker,
+	NavigationControl,
+	Popup,
+	FullscreenControl,
+} from 'react-map-gl';
+
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row } from 'reactstrap';
+
 import { Room } from "@material-ui/icons";
 import "./MapComponent.css"
 import petData from "./mapData/pet.json"
+
 
 mapboxgl.workerClass =
 	// eslint-disable-next-line import/no-webpack-loader-syntax
 	require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
   
 const mapStyle = {
-  width: '100%',
-  height: 600,
+	width: '100%',
+	height: 600,
 };
 
 const params = {
-  country: 'us',
+	country: 'us',
 };
 
-const navControlStyle= {
-  right: 10,
-  bottom: 25
+const navControlStyle = {
+	right: 10,
+	bottom: 25,
 };
 
-const fullscreenControlStyle= {
-  right: 10,
-  top: 10
+const fullscreenControlStyle = {
+	right: 10,
+	top: 10,
 };
 
 const geolocateControlStyle= {
@@ -37,6 +45,7 @@ const geolocateControlStyle= {
 };
 
 class MapView extends PureComponent {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -155,6 +164,7 @@ class MapView extends PureComponent {
       </Container>
     );
   }
+
 }
 
 export default MapView;

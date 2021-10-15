@@ -2,9 +2,6 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import ReportForm from '../components/ReportForm';
-import ReportList from '../components/ReportList';
-
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
@@ -16,7 +13,11 @@ const Profile = () => {
 		variables: { username: userParam },
 	});
 
+	console.log('username: ' + userParam);
+	console.log(data);
+
 	const user = data?.me || data?.user || {};
+
 	// redirect to personal profile page if username is yours
 	if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
 		return <Redirect to="/me" />;
@@ -43,21 +44,13 @@ const Profile = () => {
 				</h2>
 
 				<div className="col-12 col-md-10 mb-5">
-					<ReportList
-						reports={user.reports}
-						title={`${user.username}'s reports...`}
+					{/* <ThoughtList
+						thoughts={user.thoughts}
+						title={`${user.username}'s thoughts...`}
 						showTitle={false}
 						showUsername={false}
-					/>
+					/> */}
 				</div>
-				{!userParam && (
-					<div
-						className="col-12 col-md-10 mb-3 p-3"
-						style={{ border: '1px dotted #1a1a1a' }}
-					>
-						<ReportForm />
-					</div>
-				)}
 			</div>
 		</div>
 	);
