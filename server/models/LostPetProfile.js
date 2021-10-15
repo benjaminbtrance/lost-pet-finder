@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const lostPetProfile = new Schema({
+const lostPetProfileSchema = new Schema({
 	lostPetAuthor: {
 		type: String,
 		required: true,
@@ -38,6 +38,6 @@ const lostPetProfile = new Schema({
 	},
 });
 
-const LostPetProfile = model('LostPetProfile', lostPetProfile);
+const LostPetProfile = model('LostPetProfile', lostPetProfileSchema);
 
 module.exports = LostPetProfile;

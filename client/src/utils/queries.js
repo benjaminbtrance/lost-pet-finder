@@ -6,6 +6,14 @@ export const QUERY_USER = gql`
 			_id
 			username
 			email
+			profiles {
+				_id
+				lostPetName
+				lostPetType
+				lostPetCity
+				lostPetColor
+				createdAt
+			}
 		}
 	}
 `;
@@ -21,11 +29,14 @@ export const QUERY_REPORTS = gql`
 	}
 `;
 
-export const QUERY_PROFILE = gql`
-	query getprofiles {
+export const QUERY_PROFILES = gql`
+	query getProfiles {
 		profiles {
 			_id
 			lostPetName
+			lostPetType
+			lostPetCity
+			lostPetColor
 			createdAt
 		}
 	}
@@ -77,6 +88,14 @@ export const QUERY_ME = gql`
 			_id
 			username
 			email
+			profiles {
+				_id
+				lostPetName
+				lostPetType
+				lostPetCity
+				lostPetColor
+				createdAt
+			}
 		}
 	}
 `;

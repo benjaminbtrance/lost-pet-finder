@@ -10,13 +10,6 @@ const resolvers = {
 		user: async (parent, { username }) => {
 			return User.findOne({ username }).populate('profiles');
 		},
-		reports: async (parent, { username }) => {
-			const params = username ? { username } : {};
-			return Report.find(params).sort({ createdAt: -1 });
-		},
-		report: async (parent, { reportId }) => {
-			return Report.findOne({ _id: reportId });
-		},
 		profiles: async (parent, { username }) => {
 			const params = username ? { username } : {};
 			return LostPetProfile.find(params).sort({ createdAt: -1 });
@@ -80,7 +73,7 @@ const resolvers = {
 
 				await User.findOneAndUpdate(
 					{ _id: context.user._id },
-					{ $addToSet: { lostPetProfile: lostPetProfile._id } }
+					{ $addToSet: { profiles: lostPetProfile._id } }
 				);
 
 				return lostPetProfile;
