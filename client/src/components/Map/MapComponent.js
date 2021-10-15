@@ -1,5 +1,10 @@
-import React, { useState, useEffect, PureComponent } from 'react';
-import ReactMapGL, { Marker, NavigationControl, Popup, FullscreenControl, GeolocateControl } from 'react-map-gl';
+import React, { useState, PureComponent } from 'react';
+import ReactMapGL, {
+	Marker,
+	NavigationControl,
+	Popup,
+	FullscreenControl,
+} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
