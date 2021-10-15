@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
-import MapComponent from '../components/Map/MapComponent';
+// import MapComponent from '../components/Map/MapComponent';
 
 const SingleProfile = () => {
 	// Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -32,10 +32,10 @@ const SingleProfile = () => {
 				</span>
 			</h3>
 
-			<div id="wrapper">
+			{/* <div id="wrapper">
 				<div className="m-3 p-4"></div>
 				<MapComponent />
-			</div>
+			</div> */}
 		</div>
 	);
 };
