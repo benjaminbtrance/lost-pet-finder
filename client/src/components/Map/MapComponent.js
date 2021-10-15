@@ -162,6 +162,7 @@ class MapView extends PureComponent {
   }
 }
 
+
 export default MapView;
 
 
