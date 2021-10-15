@@ -366,6 +366,12 @@ body {
   min-height: 100%;
 }
 
+.pet {
+  margin: 0 !important;
+  font-family: 'Rampart One', cursive;
+  font-size: 3.2rem;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -386,8 +392,7 @@ h6 {
 }
 
 h1 {
-  font-family: 'Rampart One', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2 {

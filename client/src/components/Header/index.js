@@ -13,9 +13,11 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Pet Fetch</h1>
+            <h1 className="pet">Pet Fetch</h1>
           </Link>
-          <p className="m-0">Find your lost pet friend.</p>
+          <p className="m-0" style={{ fontSize: '2rem' }}>
+            Find your lost pet friend.
+          </p>
         </div>
         <div>
           {Auth.loggedIn() ? (
