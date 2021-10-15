@@ -36,6 +36,12 @@ const ProfileList = ({ profiles, showUsername = true }) => {
 							<p>Pet Color: {profile.lostPetColor}</p>
 							<p>City: {profile.lostPetCity}</p>
 						</div>
+						<Link
+							className="btn btn-primary btn-block btn-squared"
+							to={`/profiles/${profile._id}`}
+						>
+							Click here to help find this pet.
+						</Link>
 					</div>
 				))}
 		</div>

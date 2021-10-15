@@ -18,22 +18,22 @@ mapboxgl.workerClass =
 	require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
   
 const mapStyle = {
-  width: '100%',
-  height: 600,
+	width: '100%',
+	height: 600,
 };
 
 const params = {
-  country: 'us',
+	country: 'us',
 };
 
-const navControlStyle= {
-  right: 10,
-  bottom: 25
+const navControlStyle = {
+	right: 10,
+	bottom: 25,
 };
 
-const fullscreenControlStyle= {
-  right: 10,
-  top: 10
+const fullscreenControlStyle = {
+	right: 10,
+	top: 10,
 };
 
 const geolocateControlStyle= {
