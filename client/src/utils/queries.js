@@ -6,11 +6,6 @@ export const QUERY_USER = gql`
 			_id
 			username
 			email
-			reports {
-				_id
-				reportText
-				createdAt
-			}
 		}
 	}
 `;
@@ -21,6 +16,16 @@ export const QUERY_REPORTS = gql`
 			_id
 			reportText
 			reportAuthor
+			createdAt
+		}
+	}
+`;
+
+export const QUERY_PROFILE = gql`
+	query getprofiles {
+		profiles {
+			_id
+			lostPetName
 			createdAt
 		}
 	}
@@ -57,18 +62,21 @@ export const QUERY_SINGLE_REPORT = gql`
 	}
 `;
 
+export const QUERY_SINGLE_PROFILE = gql`
+	query getSingleProfile($profileId: ID!) {
+		profile(profileId: $profileId) {
+			_id
+			createdAt
+		}
+	}
+`;
+
 export const QUERY_ME = gql`
 	query me {
 		me {
 			_id
 			username
 			email
-			reports {
-				_id
-				reportText
-				reportAuthor
-				createdAt
-			}
 		}
 	}
 `;
