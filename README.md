@@ -15,12 +15,12 @@
 
 ## User Story
 
-## -As a user, I want to be able to create a lost pet profile and view the report on the map, or report lost pets in my area for others to find their pets.
+AS A fur parent
+I WANT to be able to create a lost pet profile and view the report on the map, or report lost pets in my area for others to find their pets.
 
 ## Acceptance Criteria
 
--As a user, I want to be able to create a profile using my name, email and create a password.
--As a user, I want to be able to create a lost pet profile to create a report of my lost pet using the pet's name, description, and my contact information.
+WHEN As a user, I want to be able to create a lost pet profile to create a report of my lost pet using the pet's name, description, and my contact information.
 -As a user, I want to be able to view the interactive map and click on the markers to view the report on the map.
 -As a user, I want my report profile to render on the map and in the report list below the map.
 -As a user, I want to be able to use the search box to locate a state, city, or address to view markers in that area.
