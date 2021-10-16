@@ -20,10 +20,14 @@ I WANT to be able to create a lost pet profile and view the report on the map, o
 
 ## Acceptance Criteria
 
-WHEN As a user, I want to be able to create a lost pet profile to create a report of my lost pet using the pet's name, description, and my contact information.
--As a user, I want to be able to view the interactive map and click on the markers to view the report on the map.
--As a user, I want my report profile to render on the map and in the report list below the map.
--As a user, I want to be able to use the search box to locate a state, city, or address to view markers in that area.
+WHEN I create a lost pet profile
+THEN I create a report of my lost pet using the pet's name, description, and my contact information
+WHEN I create a report profile
+THEN I can view my report on the map and in the report list below the map
+WHEN I view the interactive map and click on the markers
+THEN I can view the detailed report on the map
+WHEN I use the search box to locate a state, city, or address
+THEN I can view markers in that area.
 
 ## License
 
