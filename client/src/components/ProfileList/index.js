@@ -38,7 +38,7 @@ const ProfileList = ({ profiles, showUsername = true }) => {
 						</div>
 						<Link
 							className="btn btn-primary btn-block btn-squared"
-							to={`/profiles/${profile._id}`}
+							to={`/profile/${profile._id}`}
 						>
 							Click here to help find this pet.
 						</Link>

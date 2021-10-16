@@ -63,7 +63,7 @@ function App() {
 						<Route exact path="/profiles/:username">
 							<Profile />
 						</Route>
-						<Route exact path="/profiles/:profileId">
+						<Route exact path="/profile/:profileId">
 							<SingleProfile />
 						</Route>
 						<Route exact path="/create-lost-pet-profile">
