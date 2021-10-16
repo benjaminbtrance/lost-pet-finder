@@ -77,6 +77,13 @@ export const QUERY_SINGLE_PROFILE = gql`
 	query getSingleProfile($profileId: ID!) {
 		profile(profileId: $profileId) {
 			_id
+			lostPetAuthor
+			lostPetName
+			lostPetType
+			lostPetCity
+			lostPetColor
+			lostPetAuthorPhoneNum
+			lostPetAuthorEmail
 			createdAt
 		}
 	}

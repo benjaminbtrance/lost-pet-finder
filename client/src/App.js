@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleReport from './pages/SingleReport';
 import SingleProfile from './pages/SingleProfile';
 import Profile from './pages/Profile';
 import Header from './components/Header';
@@ -63,9 +62,6 @@ function App() {
 						</Route>
 						<Route exact path="/profiles/:username">
 							<Profile />
-						</Route>
-						<Route exact path="/reports/:reportId">
-							<SingleReport />
 						</Route>
 						<Route exact path="/profiles/:profileId">
 							<SingleProfile />

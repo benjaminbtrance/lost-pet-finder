@@ -5,18 +5,18 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
-// import MapComponent from '../components/Map/MapComponent';
+import MapComponent from '../components/Map/MapComponent';
 
 const SingleProfile = () => {
 	// Use `useParams()` to retrieve value of the route parameter `:profileId`
 	const { profileId } = useParams();
 
-	console.log(profileId);
-
 	const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
 		// pass URL parameter
 		variables: { profileId: profileId },
 	});
+
+	console.log(data);
 
 	const profile = data?.profile || {};
 
@@ -26,16 +26,32 @@ const SingleProfile = () => {
 	return (
 		<div className="my-3">
 			<h3 className="card-header bg-dark text-light p-2 m-0">
-				{profile.lostPetName} <br />
+				{profile.lostPetAuthor} <br />
 				<span style={{ fontSize: '1rem' }}>
-					had this report on {profile.createdAt}
+					had this reported on {profile.createdAt}
 				</span>
 			</h3>
-
-			{/* <div id="wrapper">
-				<div className="m-3 p-4"></div>
-				<MapComponent />
-			</div> */}
+			<MapComponent />
+			<div className="bg-light py-4">
+				<blockquote className="p-4 block-quote">
+					Pet Name: {profile.lostPetName}
+				</blockquote>
+				<blockquote className="p-4 block-quote">
+					Pet Type: {profile.lostPetType}
+				</blockquote>
+				<blockquote className="p-4 block-quote">
+					City: {profile.lostPetCity}
+				</blockquote>
+				<blockquote className="p-4 block-quote">
+					Color: {profile.lostPetColor}
+				</blockquote>
+				<blockquote className="p-4 block-quote">
+					Owner's Phone Number: {profile.lostPetAuthorPhoneNum}
+				</blockquote>
+				<blockquote className="p-4 block-quote">
+					Owner's E-Mail: {profile.lostPetAuthorEmail}
+				</blockquote>
+			</div>
 		</div>
 	);
 };

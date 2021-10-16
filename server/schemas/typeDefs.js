@@ -44,8 +44,6 @@ const typeDefs = gql`
 	type Query {
 		users: [User]
 		user(username: String!): User
-		reports(username: String): [Report]
-		report(reportId: ID!): Report
 		profiles(username: String): [LostPetProfile]
 		profile(profileId: ID!): LostPetProfile
 		me: User
