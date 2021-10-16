@@ -1,8 +1,17 @@
-# Lost Pet Finder
+# Pet Fetch
 
 ## Description
 
+“Pet Fetch” is an application that focuses on finding your beloved furry or non-furry friends. It allows the user to create an account and post the information about their missing pet friend(s). The user can create a report indicating the type, color, name and last known location of the pet, along with the user contact information.
+
 ## Table of Contents
+
+- [Description](#Description)
+- [User Story](#UserStory)
+- [Acceptance Criteria](#AcceptanceCriteria)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Questions](#Questions)
 
 ## User Story
 
