@@ -77,7 +77,7 @@ class MapView extends PureComponent {
 
 	render() {
 		const { viewport, selectedPet } = this.state;
-		console.log(selectedPet);
+		// console.log(selectedPet);
 		return (
 			<Container fluid={true}>
 				<Row>
