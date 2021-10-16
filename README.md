@@ -2,7 +2,7 @@
 
 ## Description
 
-“Pet Fetch” is an application that focuses on finding your beloved furry or non-furry friends. It allows the user to create an account and post the information about their missing pet friend(s). The user can create a report indicating the type, color, name and last known location of the pet, along with the user contact information.
+“Pet Fetch” is an application that focuses on finding your beloved furry or non-furry friends. It allows the user to create an account and post the information about their missing pet friend(s). The user can create a report indicating the type, color, name and last known location of the pet, along with the user contact information. Users can view reports on the interactive map and search by typing in a state, city or address.
 
 ## Table of Contents
 
