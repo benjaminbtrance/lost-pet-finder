@@ -29,6 +29,9 @@ THEN I can view the detailed report on the map <br />
 WHEN I use the search box to locate a state, city, or address <br />
 THEN I can view markers in that area. <br />
 
+## Deployment: 
+- Link to page: https://lost-pet-finder.herokuapp.com/ 
+
 ## License
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
